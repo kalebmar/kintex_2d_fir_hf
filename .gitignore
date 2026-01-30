@@ -1,83 +1,22 @@
-# Vivado által generált ideiglenes fájlok és könyvtárak
-*.jou
-*.log
-*.str
-*.xil
-*.html
-*.backup.jou
-*.backup.log
-*.pb
-*.tmp
-*.dmp
+# Mindent tiltunk
+*
 
-# Vivado implementációs és szintézis eredmények
-*.runs/
-*.srcs/sources_1/bd/*/hw_handoff/
-*.srcs/sources_1/bd/*/ipshared/
-*.srcs/sources_1/bd/*/ip/
-*.cache/
-*.hw/
-*.ip_user_files/
-*.sim/
-*.srcs/sim_1/new/*.wdb
-*.srcs/sim_1/new/*.vcd
-*.srcs/sim_1/new/*.vvp
-*.srcs/sim_1/new/*.saif
+# Mappa-bejárás engedélyezése
+!*/
 
-# Projektfájlok, amiket a Vivado újragenerál
-*.srcs/
-*.data/
-*.gen/
-*.ip_user_files/
-*.runs/
-*.cache/
-*.hw/
-*.sim/
-*.ip_user_files/
-*.srcs/sim_1/imports/
-
-# Vivado projekt metaadatok (újragenerálhatóak)
-*.Xil/
-*.Xil/
-*.crash_dump/
-
-# Temporary vagy lock fájlok
-*.lock
-*.log.lock
-
-# Checkpoint, implementációs eredmények
-*.dcp
-*.rpt
-*.ltx
-
-# Waveform és szimulációs fájlok
-*.wdb
-*.vcd
-*.vvp
-*.saif
-
-# Vivado által generált projektek
-*.runs/
-*.cache/
-*.hw/
-*.sim/
-*.xpr~
-*.backup
-
-# OS-specifikus
-.DS_Store
-Thumbs.db
-
-# Editor/IDE fájlok
-.vscode/
-.idea/
-
-# Ha Block Design-t is használsz, de menteni akarod a top szintű forrást:
-!*.bd
+# Forrásfájlok és projektfájl
 !*.v
-!*.sv
 !*.xdc
-!*.tcl
-!*.coe
-!*.txt
-!*.mem
+!*.xpr
+!*.gitignore
+
+# CSAK a forrásmappán belüli memory_files mappa tartalmát engedélyezzük
+!fpga_hf_2d_fir.srcs/**/memory_files/*.txt
+
+# Szigorú tiltás a generált szemetekre (hogy a .sim-ből ne jöjjön txt)
+fpga_hf_2d_fir.sim/
+fpga_hf_2d_fir.runs/
+fpga_hf_2d_fir.cache/
+fpga_hf_2d_fir.hw/
+fpga_hf_2d_fir.ip_user_files/
+.Xil/
